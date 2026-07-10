@@ -1,0 +1,142 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "field:tariff_name",
+ "creation": "2026-06-29 00:00:00.000000",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "details_section",
+  "tariff_name",
+  "shipping_line",
+  "origin_port",
+  "destination_port",
+  "container_type",
+  "shipment_mode",
+  "column_break_main",
+  "rate_per_container",
+  "rate_per_cbm",
+  "min_charge",
+  "charge_item",
+  "is_active"
+ ],
+ "fields": [
+  {
+   "fieldname": "details_section",
+   "fieldtype": "Section Break",
+   "label": "Sea Freight Rate"
+  },
+  {
+   "fieldname": "tariff_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Tariff Name",
+   "reqd": 1,
+   "unique": 1
+  },
+  {
+   "fieldname": "shipping_line",
+   "fieldtype": "Data",
+   "in_standard_filter": 1,
+   "label": "Shipping Line"
+  },
+  {
+   "fieldname": "origin_port",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Origin Port"
+  },
+  {
+   "fieldname": "destination_port",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Destination Port"
+  },
+  {
+   "fieldname": "container_type",
+   "fieldtype": "Link",
+   "label": "Container Type",
+   "options": "Container Type"
+  },
+  {
+   "default": "FCL",
+   "fieldname": "shipment_mode",
+   "fieldtype": "Select",
+   "label": "Shipment Mode",
+   "options": "FCL\nLCL"
+  },
+  {
+   "fieldname": "column_break_main",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "rate_per_container",
+   "fieldtype": "Currency",
+   "label": "Rate per Container"
+  },
+  {
+   "fieldname": "rate_per_cbm",
+   "fieldtype": "Currency",
+   "label": "Rate per CBM"
+  },
+  {
+   "fieldname": "min_charge",
+   "fieldtype": "Currency",
+   "label": "Minimum Charge"
+  },
+  {
+   "fieldname": "charge_item",
+   "fieldtype": "Link",
+   "label": "Charge Item",
+   "options": "Item"
+  },
+  {
+   "default": "1",
+   "fieldname": "is_active",
+   "fieldtype": "Check",
+   "in_standard_filter": 1,
+   "label": "Is Active"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2026-06-29 00:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "A3 Logistics",
+ "name": "Sea Freight Tariff",
+ "naming_rule": "By fieldname",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Logistics Coordinator",
+   "select": 1,
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

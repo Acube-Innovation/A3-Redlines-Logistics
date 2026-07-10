@@ -1,0 +1,247 @@
+{
+ "actions": [],
+ "allow_rename": 0,
+ "creation": "2026-06-29 00:00:00.000000",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "availability_section",
+  "availability_help",
+  "enable_transport",
+  "enable_warehousing",
+  "enable_3pl",
+  "enable_air_shipping",
+  "column_break_avail",
+  "enable_sea_shipping",
+  "enable_customs_clearance",
+  "enable_industrial_packing",
+  "enable_packing_relocation",
+  "general_section",
+  "logistics_item_group",
+  "pass_through_tax_template",
+  "charge_items_section",
+  "air_charge_item",
+  "sea_charge_item",
+  "customs_charge_item",
+  "column_break_items",
+  "packing_charge_item",
+  "relocation_charge_item",
+  "tpl_charge_item",
+  "tax_templates_section",
+  "air_tax_template",
+  "sea_tax_template",
+  "customs_tax_template",
+  "column_break_tax",
+  "packing_tax_template",
+  "relocation_tax_template",
+  "tpl_tax_template"
+ ],
+ "fields": [
+  {
+   "fieldname": "availability_section",
+   "fieldtype": "Section Break",
+   "label": "Booking Type Availability"
+  },
+  {
+   "fieldname": "availability_help",
+   "fieldtype": "HTML",
+   "options": "<p style='color:#6b7280;font-size:12px'>Tick a service to make it live on the booking-type page. Unticked services show an <b>Under Construction</b> notice when clicked.</p>"
+  },
+  {
+   "default": "1",
+   "fieldname": "enable_transport",
+   "fieldtype": "Check",
+   "label": "Transport"
+  },
+  {
+   "default": "1",
+   "fieldname": "enable_warehousing",
+   "fieldtype": "Check",
+   "label": "Warehousing"
+  },
+  {
+   "default": "0",
+   "fieldname": "enable_3pl",
+   "fieldtype": "Check",
+   "label": "3PL Logistics & Distribution"
+  },
+  {
+   "default": "0",
+   "fieldname": "enable_air_shipping",
+   "fieldtype": "Check",
+   "label": "Air Shipping"
+  },
+  {
+   "fieldname": "column_break_avail",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "enable_sea_shipping",
+   "fieldtype": "Check",
+   "label": "Sea Shipping"
+  },
+  {
+   "default": "0",
+   "fieldname": "enable_customs_clearance",
+   "fieldtype": "Check",
+   "label": "Customs Clearance"
+  },
+  {
+   "default": "0",
+   "fieldname": "enable_industrial_packing",
+   "fieldtype": "Check",
+   "label": "Industrial Packing"
+  },
+  {
+   "default": "0",
+   "fieldname": "enable_packing_relocation",
+   "fieldtype": "Check",
+   "label": "Packing & Relocation"
+  },
+  {
+   "fieldname": "general_section",
+   "fieldtype": "Section Break",
+   "label": "General"
+  },
+  {
+   "description": "Item Group that marks a line as logistics-owned. Charge Items for new services must live here so the stacked validate handler can rebuild only logistics rows without disturbing Transport/Warehouse rows. Seeded to 'Logistics Services' by after_install.",
+   "fieldname": "logistics_item_group",
+   "fieldtype": "Link",
+   "label": "Logistics Item Group",
+   "options": "Item Group"
+  },
+  {
+   "description": "Tax template applied to statutory pass-through charges (customs duty / import VAT disbursements). Leave blank for no extra VAT.",
+   "fieldname": "pass_through_tax_template",
+   "fieldtype": "Link",
+   "label": "Pass-through Tax Template",
+   "options": "Item Tax Template"
+  },
+  {
+   "fieldname": "charge_items_section",
+   "fieldtype": "Section Break",
+   "label": "Default Charge Items"
+  },
+  {
+   "fieldname": "air_charge_item",
+   "fieldtype": "Link",
+   "label": "Air Freight Charge Item",
+   "options": "Item"
+  },
+  {
+   "fieldname": "sea_charge_item",
+   "fieldtype": "Link",
+   "label": "Sea Freight Charge Item",
+   "options": "Item"
+  },
+  {
+   "fieldname": "customs_charge_item",
+   "fieldtype": "Link",
+   "label": "Customs Charge Item",
+   "options": "Item"
+  },
+  {
+   "fieldname": "column_break_items",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "packing_charge_item",
+   "fieldtype": "Link",
+   "label": "Industrial Packing Charge Item",
+   "options": "Item"
+  },
+  {
+   "fieldname": "relocation_charge_item",
+   "fieldtype": "Link",
+   "label": "Relocation Charge Item",
+   "options": "Item"
+  },
+  {
+   "fieldname": "tpl_charge_item",
+   "fieldtype": "Link",
+   "label": "3PL Charge Item",
+   "options": "Item"
+  },
+  {
+   "fieldname": "tax_templates_section",
+   "fieldtype": "Section Break",
+   "label": "Per-service Tax Templates (optional overrides)"
+  },
+  {
+   "description": "Optional. Leave blank to inherit the bench default (UAE VAT 5% - RLI). Set a zero-rated template here for export air freight if required.",
+   "fieldname": "air_tax_template",
+   "fieldtype": "Link",
+   "label": "Air Tax Template",
+   "options": "Item Tax Template"
+  },
+  {
+   "fieldname": "sea_tax_template",
+   "fieldtype": "Link",
+   "label": "Sea Tax Template",
+   "options": "Item Tax Template"
+  },
+  {
+   "fieldname": "customs_tax_template",
+   "fieldtype": "Link",
+   "label": "Customs Tax Template",
+   "options": "Item Tax Template"
+  },
+  {
+   "fieldname": "column_break_tax",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "packing_tax_template",
+   "fieldtype": "Link",
+   "label": "Packing Tax Template",
+   "options": "Item Tax Template"
+  },
+  {
+   "fieldname": "relocation_tax_template",
+   "fieldtype": "Link",
+   "label": "Relocation Tax Template",
+   "options": "Item Tax Template"
+  },
+  {
+   "fieldname": "tpl_tax_template",
+   "fieldtype": "Link",
+   "label": "3PL Tax Template",
+   "options": "Item Tax Template"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "issingle": 1,
+ "links": [],
+ "modified": "2026-06-29 00:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "A3 Logistics",
+ "name": "A3 Logistics Settings",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Logistics Coordinator",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}
