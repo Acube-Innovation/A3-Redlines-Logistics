@@ -33,23 +33,23 @@ BOOKING_TYPE_FLAGS = {
 _ENABLE_DEFAULTS = {"enable_transport": 1, "enable_warehousing": 1}
 
 
-# @frappe.whitelist()
-# def get_enabled_booking_types():
-# 	"""Map of booking-type label -> 1/0, driven by A3 Logistics Settings check fields.
+@frappe.whitelist()
+def get_enabled_booking_types():
+	"""Map of booking-type label -> 1/0, driven by A3 Logistics Settings check fields.
 
-# 	The booking-type selection page reads this to decide which tiles are live vs. Under Construction.
-# 	"""
-# 	try:
-# 		s = frappe.get_cached_doc("A3 Logistics Settings")
-# 	except Exception:
-# 		s = None
-# 	out = {}
-# 	for label, field in BOOKING_TYPE_FLAGS.items():
-# 		val = s.get(field) if s else None
-# 		if val is None:
-# 			val = _ENABLE_DEFAULTS.get(field, 0)
-# 		out[label] = int(val or 0)
-# 	return out
+	The booking-type selection page reads this to decide which tiles are live vs. Under Construction.
+	"""
+	try:
+		s = frappe.get_cached_doc("A3 Logistics Settings")
+	except Exception:
+		s = None
+	out = {}
+	for label, field in BOOKING_TYPE_FLAGS.items():
+		val = s.get(field) if s else None
+		if val is None:
+			val = _ENABLE_DEFAULTS.get(field, 0)
+		out[label] = int(val or 0)
+	return out
 
 
 def _payload(payload):
