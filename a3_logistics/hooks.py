@@ -13,7 +13,7 @@ app_license = "mit"
 # this commented; we fix that fragility here). a3_logistics MUST be ordered AFTER
 # a3_warehouse_management in sites/apps.txt so its validate handler runs last and its
 # dashboard override receives the already-merged data.
-required_apps = ["a3_trip_management"]
+# required_apps = ["a3_trip_management"]
 
 # Document Events
 # ---------------
